@@ -13,6 +13,8 @@
 		86B1F25E249215AE0020BE97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B1F25C249215AE0020BE97 /* Main.storyboard */; };
 		86B1F260249215AF0020BE97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86B1F25F249215AF0020BE97 /* Assets.xcassets */; };
 		86B1F263249215AF0020BE97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B1F261249215AF0020BE97 /* LaunchScreen.storyboard */; };
+		86B1F26C249231410020BE97 /* playGround.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86B1F26B249231410020BE97 /* playGround.storyboard */; };
+		86B1F26E249231880020BE97 /* playGroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B1F26D249231880020BE97 /* playGroundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		86B1F25F249215AF0020BE97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86B1F262249215AF0020BE97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86B1F264249215AF0020BE97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86B1F26B249231410020BE97 /* playGround.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = playGround.storyboard; sourceTree = "<group>"; };
+		86B1F26D249231880020BE97 /* playGroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playGroundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				86B1F25F249215AF0020BE97 /* Assets.xcassets */,
 				86B1F261249215AF0020BE97 /* LaunchScreen.storyboard */,
 				86B1F264249215AF0020BE97 /* Info.plist */,
+				86B1F26B249231410020BE97 /* playGround.storyboard */,
+				86B1F26D249231880020BE97 /* playGroundViewController.swift */,
 			);
 			path = NC3;
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B1F263249215AF0020BE97 /* LaunchScreen.storyboard in Resources */,
+				86B1F26C249231410020BE97 /* playGround.storyboard in Resources */,
 				86B1F260249215AF0020BE97 /* Assets.xcassets in Resources */,
 				86B1F25E249215AE0020BE97 /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B1F25B249215AE0020BE97 /* ViewController.swift in Sources */,
+				86B1F26E249231880020BE97 /* playGroundViewController.swift in Sources */,
 				86B1F257249215AE0020BE97 /* AppDelegate.swift in Sources */,
 				86B1F259249215AE0020BE97 /* SceneDelegate.swift in Sources */,
 			);
