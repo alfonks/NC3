@@ -38,6 +38,16 @@ class playGroundViewController: UIViewController {
         let touch = UITapGestureRecognizer(target: self, action: #selector(tapAction(_:)))
         robot.addGestureRecognizer(touch)
         
+        let hold = UILongPressGestureRecognizer(target: self, action: #selector(longAction(_:)))
+        robot.addGestureRecognizer(hold)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction(_:)))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
     }
     
     private func loadBehavior() {
@@ -51,6 +61,33 @@ class playGroundViewController: UIViewController {
         dynamicAnimator.addBehavior(gravity)
         dynamicAnimator.addBehavior(collisionBehavior)
         dynamicAnimator.addBehavior(pushBehavior)
+    }
+    
+    @objc func longAction(_ selector: UILongPressGestureRecognizer) {
+        if selector.state == .began {
+            imageInsideView.image = #imageLiteral(resourceName: "rsz_hold_1")
+            
+        } else if selector.state == .ended {
+            self.reset()
+        }
+    }
+    
+    @objc func swipeAction(_ selector: UISwipeGestureRecognizer) {
+        if selector.direction == .left {
+            let coordinate = CGPoint(x: view.center.x - 145, y: view.center.y)
+            robot.center = coordinate
+            self.imageInsideView.image = #imageLiteral(resourceName: "rsz_left_1")
+        }
+        
+        if selector.direction == .right {
+            let coordinate = CGPoint(x: view.center.x + 175, y: view.center.y)
+            robot.center = coordinate
+            self.imageInsideView.image = #imageLiteral(resourceName: "rsz_right_1")
+        }
+        
+        DispatchQueue.main.asyncAfter (deadline: .now() + 2.0){
+            self.reset()
+        }
     }
     
     @objc func panAction(_ selector: UIPanGestureRecognizer) {
@@ -80,19 +117,17 @@ class playGroundViewController: UIViewController {
     }
     
     private func reset() {
-//        let animator = UIViewPropertyAnimator(
-//        duration: 1,
-//        dampingRatio: 1) {
-//            self.gravity.removeItem(self.robot)
-//            self.gravity.addItem(self.robot)
-//        }
-//        animator.startAnimation()
-        //pushBehavior.setAngle(<#T##angle: CGFloat##CGFloat#>, magnitude: <#T##CGFloat#>)
-        //print("last position: ",robot.center.x, robot.center.y)
-        //print("gravity position: ",robot.center.x, robot.center.y)
+        let animator = UIViewPropertyAnimator(
+        duration: 1,
+        dampingRatio: 1) {
+            self.imageInsideView.image = #imageLiteral(resourceName: "rsz_still_1")
+            self.dynamicAnimator.updateItem(usingCurrentState: self.robot)
+        }
+        animator.startAnimation()
+
         
-        dynamicAnimator.updateItem(usingCurrentState: robot)
-        imageInsideView.image = #imageLiteral(resourceName: "rsz_still_1")
+        
+        
     }
 
 
